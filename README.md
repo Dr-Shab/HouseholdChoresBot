@@ -20,12 +20,11 @@ These are handled with docker-compose.
 
 #### Remarks
 - WhatsappBot best runs as a cronjob in /etc/cron.d/bot as normal user
-- Updated chromedriver BUT does not work on raspberry! 
+- Added some more options to avoid bot detection as well as some javascript.
 
 #### Workflow Diagram
 ![image info](./cafanoble-duties.png)
 
-- Added some more options to avoid bot detection as well as some javascript.
 
 ## TODO
 
