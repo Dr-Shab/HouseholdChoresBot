@@ -11,7 +11,7 @@ When running the script for the first time you need to authenticate via the QR c
 which is then used to directly log in the next time. This works as long as you do not manually log out from your phone.
 
 #### Simple Website
-At / a beautiful relaxing website is served. Accessible via the public address happycastle.ch
+At / a beautiful relaxing website is served. Accessible via your public domain, if you bought one or otherwise over localhost.
 It is run as a docker container on it's own and will be needed for roomates to checkin for work.
 
 #### Docker Compose
