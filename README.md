@@ -38,4 +38,5 @@ These are handled with docker-compose.
 | Pack up everything nicely as a docker image, so that we don't have this awful permission chaos etc.                                                                    | done   |
 | Harden the nginx proxy server inside the container -> change config file                                                                                               | done   |
 | add SSL certs with certtbot                                                                                                                                            | done   |           
-
+## Disclaimer
+This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or its affiliates. The official WhatsApp website can be found at whatsapp.com. "WhatsApp" as well as related names, marks, emblems and images are registered trademarks of their respective owners. Also it is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn't be considered totally safe.
