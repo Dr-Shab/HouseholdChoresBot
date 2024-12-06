@@ -23,6 +23,7 @@ A WhatsApp bot designed to send newly assigned house chores, reminders, and more
 ## **Remarks**
 - The WhatsApp bot is best run as a cron job in `/etc/cron.d/bot` under a normal user.
 - Includes enhancements to minimize bot detection, along with some custom JavaScript.
+- I am working on a more secure docker image for the website, that's why the docker compose won't find the specified image. Please use the following or similar: [uwsgi-nginx-flask-docker](https://github.com/tiangolo/uwsgi-nginx-flask-docker) as a base.
 
 
 #### Workflow Diagram
