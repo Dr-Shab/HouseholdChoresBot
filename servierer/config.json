@@ -1,0 +1,21 @@
+{
+    "workers": [
+        "John Doe",
+        "Leyla Doe",
+        "Mustermann",
+    ],
+    "tokens": {
+        "78d43094f8c056d196d7167e43ed5758": "John Doe",
+        "c8377855bbab58c0afb6ae5258b2b49c": "Leyla Doe",
+        "e37d031f948e5884a2ffea731fb8aaf2": "Mustermann",
+    },
+    "aemtli": [
+        "WG-Essen zaubern",
+        "Alles staubsaugen",
+        "Tüechli + Waschküche aufräumen",
+    ],
+    "entsorgungsplan": [
+        "Papier",
+        "Karton"
+    ]
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <title>Happy Castle</title>
+    </head>
+    <body>
+        <div class="gradient"></div> <!-- shoutout to https://codepen.io/wilvander for this relaxing css animation -->
+    <audio id="welcome-audio" preload="auto">
+        <source src="{{ url_for('static', filename='whale.mp3') }}" type="audio/mp3"> <!-- shoutout to https://www.digitalocean.com/ for the whale sounds -->
+    </audio>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById('welcome-audio');
+            audio.play();
+            window.removeEventListener('click', playAudio);
+        }
+
+        window.addEventListener('click', playAudio);
+    </script>
+    </body>
+</html>
+

@@ -1,0 +1,25 @@
+limit_req_zone $binary_remote_addr zone=foo:10m rate=6r/m;
+
+server {
+
+    server_name localhost;
+
+    location / {
+        limit_req zone=foo burst=5 delay=3;
+        include uwsgi_params;
+        uwsgi_pass unix:///app/run/uwsgi.sock;
+    }
+
+    if ($request_method !~ ^(GET)$ )
+    {
+        return 405;
+    }
+
+    if ($http_user_agent = "") {
+        return 418;
+    }
+
+    listen 80;
+    listen [::]:80;
+
+}

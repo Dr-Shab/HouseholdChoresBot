@@ -1,0 +1,55 @@
+services:
+  datahandler:
+    build:
+      context: servierer
+    container_name: servierer
+    ports:
+      - "8000:8000"  # Maps container port 8000 to host port 8000
+    networks:
+      - app-network
+    env_file:
+      - servierer/.servierenv  # Specify the .env file for app1
+    volumes:
+      - ./servierer/config.json:/home/serv-it/servierer/config.json:rw  # Bind mount for app1 config.json
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/api/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  dblogic:
+    build:
+      context: db
+    container_name: databae
+    ports:
+      - "8001:8000"  # Maps container port 8000 to host port 8001
+    networks:
+      - app-network
+    env_file:
+      - db/.dbenv  # Specify the .env file for app2
+    volumes:
+      - ./db/checkin_data.db:/home/db-it/databae/checkin_data.db:rw
+    depends_on:
+      datahandler:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8001/api/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  happy-website:
+    build:
+      context: website
+    container_name: website
+    ports:
+      - "8080:8080"  # Maps container port 8000 to host port 8001
+    networks:
+      - app-network
+    depends_on:
+      dblogic:
+        condition: service_healthy
+
+networks:
+  app-network:
+    driver: bridge
