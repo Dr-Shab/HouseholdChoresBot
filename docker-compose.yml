@@ -4,13 +4,13 @@ services:
       context: servierer
     container_name: servierer
     ports:
-      - "8000:8000"  # Maps container port 8000 to host port 8000
+      - "127.0.0.1:8000:8000"
     networks:
       - app-network
     env_file:
-      - servierer/.servierenv  # Specify the .env file for app1
+      - servierer/.servierenv
     volumes:
-      - ./servierer/config.json:/home/serv-it/servierer/config.json:rw  # Bind mount for app1 config.json
+      - ./servierer/config.json:/home/serv-it/servierer/config.json:rw
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8000/api/health" ]
       interval: 10s
@@ -22,11 +22,11 @@ services:
       context: db
     container_name: databae
     ports:
-      - "8001:8000"  # Maps container port 8000 to host port 8001
+      - "127.0.0.1:8001:8000"
     networks:
       - app-network
     env_file:
-      - db/.dbenv  # Specify the .env file for app2
+      - db/.dbenv
     volumes:
       - ./db/checkin_data.db:/home/db-it/databae/checkin_data.db:rw
     depends_on:
@@ -43,7 +43,7 @@ services:
       context: website
     container_name: website
     ports:
-      - "8080:8080"  # Maps container port 8000 to host port 8001
+      - "127.0.0.1:8080:8080"
     networks:
       - app-network
     depends_on:
