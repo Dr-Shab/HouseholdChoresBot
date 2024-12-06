@@ -1,26 +1,37 @@
-# Whatsapp Bot
-Whatsapp Bot which sends the newly assigned house chores, reminders and more to your roommates defined in a config.json.
+# **WhatsApp Bot**
 
-## Setup
-#### Contact Names & Chores
-Names of contacts need to stored as they are saved in Whatsapp. 
-Names and chores are stored in the file config.json.
+A WhatsApp bot designed to send newly assigned house chores, reminders, and more to your roommates, as defined in a `config.json` file.
 
-#### Authentication
-When running the script for the first time you need to authenticate via the QR code afterwards everything needed is saved in a chrome profile locally,
-which is then used to directly log in the next time. This works as long as you do not manually log out from your phone.
+---
 
-#### Simple Website
-At / a beautiful relaxing website is served. Accessible via your public domain, if you bought one or otherwise over localhost.
-It is run as a docker container on it's own and will be needed for roomates to checkin for work.
+## **Setup**
 
-#### Docker Compose
-The Bot will get its info from the containers and also feed data to th db via the containers.
-These are handled with docker-compose.
+### **Contact Names & Chores**
+- Store the names of contacts exactly as they appear in WhatsApp.
+- Contacts and their corresponding chores are managed through the `config.json` file in servierer/.
 
-#### Remarks
-- WhatsappBot best runs as a cronjob in /etc/cron.d/bot as normal user
-- Added some more options to avoid bot detection as well as some javascript.
+### **Authentication**
+- On first run, authenticate via a QR code.
+- Subsequent logins use a locally stored Chrome profile, allowing for direct login unless manually logged out from the WhatsApp mobile app.
+
+---
+
+## **Simple Website**
+- A beautiful, relaxing website is served at `/`.
+- Accessible via a public domain (if purchased) or over `localhost`.
+- Hosted as an independent Docker container and allows roommates to check in for their tasks.
+
+---
+
+## **Docker Compose**
+- The bot communicates with other containers and feeds data to the database through Docker Compose.
+
+---
+
+## **Remarks**
+- The WhatsApp bot is best run as a cron job in `/etc/cron.d/bot` under a normal user.
+- Includes enhancements to minimize bot detection, along with some custom JavaScript.
+
 
 #### Workflow Diagram
 ![image info](./cafanoble-duties.png)
