@@ -2,8 +2,6 @@
 
 A WhatsApp bot designed to send newly assigned house chores, reminders, and more to your roommates, as defined in a `config.json` file.
 
----
-
 ## **Setup**
 
 ### **Contact Names & Chores**
@@ -14,19 +12,13 @@ A WhatsApp bot designed to send newly assigned house chores, reminders, and more
 - On first run, authenticate via a QR code.
 - Subsequent logins use a locally stored Chrome profile, allowing for direct login unless manually logged out from the WhatsApp mobile app.
 
----
-
 ## **Simple Website**
 - A beautiful, relaxing website is served at `/`.
 - Accessible via a public domain (if purchased) or over `localhost`.
 - Hosted as an independent Docker container and allows roommates to check in for their tasks.
 
----
-
 ## **Docker Compose**
 - The bot communicates with other containers and feeds data to the database through Docker Compose.
-
----
 
 ## **Remarks**
 - The WhatsApp bot is best run as a cron job in `/etc/cron.d/bot` under a normal user.
