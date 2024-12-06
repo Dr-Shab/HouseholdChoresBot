@@ -1,4 +1,4 @@
-# Cafanoble-Duties - Whatsapp Bot
+# Whatsapp Bot
 Whatsapp Bot which sends the newly assigned house chores, reminders and more to your roommates defined in a config.json.
 
 ## Setup
